@@ -13,4 +13,10 @@ namespace :api do
     resources :todos, only: %i[index show create update destroy]
   end
 end
+
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "graphql#execute"
+  end
+  post "/graphql", to: "graphql#execute"
+  
 end
