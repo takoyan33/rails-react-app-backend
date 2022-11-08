@@ -21,3 +21,12 @@ SAMPLE_TODOS = [
 SAMPLE_TODOS.each do |todo|
   Todo.create(todo)
 end
+
+3.times do |i|
+  Book.create!(title: "本 #{i + 1}")
+end
+
+
+3.times do |i|
+  Member.create!(fullname: "太郎 #{i + 1}",grade: "2年生", gender: "男" )
+end
