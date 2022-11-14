@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(version: 2022_10_26_145521) do
   end
 
   create_table "members", force: :cascade do |t|
+    t.string "profilepic"
     t.integer "userid"
     t.string "fullname"
     t.string "hurigana"
     t.string "department"
     t.string "grade"
     t.string "gender"
-    t.string "birthday"
-    t.string "admin"
+    t.date "birthday"
+    t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
