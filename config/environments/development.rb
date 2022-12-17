@@ -51,4 +51,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   config.hosts << "rails-react-app-backend.herokuapp.com"
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 end
