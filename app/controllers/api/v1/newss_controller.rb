@@ -8,6 +8,7 @@ class Api::V1::NewssController < ApplicationController
     news = News.find(params[:id])
     render json: news
   end
+  
 
   def create
     news = News.new(news_params)
