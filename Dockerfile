@@ -1,6 +1,6 @@
 # FROMでベースイメージを設定
 # 今回はRubyのバージョン2.7をベースイメージとして設定
-FROM ruby:2.7
+FROM ruby:2.7.8
 # nodeやyarn等の必要なライブラリをインストール
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 # Railsアプリを配置するフォルダをコンテナ内に作成
