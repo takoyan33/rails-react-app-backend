@@ -52,4 +52,6 @@ Rails.application.configure do
   
   config.hosts << "rails-react-app-backend.herokuapp.com"
   config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
+  # 全てのホストを許可する
+  config.hosts.clear
 end
