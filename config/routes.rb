@@ -20,15 +20,14 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-
+  #news
   root to: redirect('api/v1/newss')
 
   get 'newss', to: 'site#index'
   get 'newss/new', to: 'site#index'
   get 'newss/:id/edit', to: 'site#index'
 
-  
-  # root to: redirect('api/v1/todos')
+  #todos
 
   # get 'todos', to: 'site#index'
   # get 'todos/new', to: 'site#index'
