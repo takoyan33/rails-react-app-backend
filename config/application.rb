@@ -24,11 +24,12 @@ module Myapp
       config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     # CORSの設定
-  config.middleware.insert_before 0, Rack::Cors do
-    allow do
-      origins "*" 
-      resource "*", headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
-      end 
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins "*"
+        expose = ["access-token", "expiry", "token-type", "uid", "client"]
+        resource "*", headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head], expose: expose
+      end
     end
   end
 end
