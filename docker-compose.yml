@@ -37,3 +37,8 @@ services:
 volumes:
   postgresql-data:
     driver: local
+
+environment:
+  - POSTGRES_DB=postgres
+  - POSTGRES_USER=postgres
+  - POSTGRES_PASSWORD=postgres
