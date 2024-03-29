@@ -14,8 +14,7 @@ services:
     # Dockerコンテナ内での環境変数を定義
     # Rails側のdatabase.ymlに下記の情報を入れることで連携ができる(後述)
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      - POSTGRES_HOST_AUTH_METHOD=trust
     # DBのDockerイメージを立ち上げる際のポート番号
     ports:
       - "5432:5432"
@@ -37,8 +36,3 @@ services:
 volumes:
   postgresql-data:
     driver: local
-
-environment:
-  - POSTGRES_DB=postgres
-  - POSTGRES_USER=postgres
-  - POSTGRES_PASSWORD=postgres
