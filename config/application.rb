@@ -23,6 +23,7 @@ module Myapp
     config.api_only = true
       config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.session_store :active_record_store, key: '_your_app_session', expire_after: 14.days
     # CORSの設定
     config.middleware.insert_before 0, Rack::Cors do
       allow do

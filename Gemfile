@@ -11,6 +11,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem "devise"
 gem "devise_token_auth"
+gem 'activerecord-session_store'
+gem 'multi_json', '1.15.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
