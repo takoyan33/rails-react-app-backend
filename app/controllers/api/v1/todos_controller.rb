@@ -1,4 +1,5 @@
 class Api::V1::TodosController < ApplicationController
+  
   def index
     render json: { status: 200, todos: Todo.all }
   end

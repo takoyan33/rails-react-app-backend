@@ -1,15 +1,16 @@
 class Api::V1::NewssController < ApplicationController
+  #全件表示
   def index
     newss = News.order(updated_at: :desc)
     render json: newss
   end
-
+  #特定のデータを表示
   def show
     news = News.find(params[:id])
     render json: news
   end
   
-
+  #新規作成
   def create
     news = News.new(news_params)
     if news.save
