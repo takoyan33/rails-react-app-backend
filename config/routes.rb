@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       delete '/newss/destroy_all', to: 'newss#destroy_all'
       resources :newss, only: %i[index show create update destroy]
 
+      resources :histories, only: [:index, :show]
+
       # delete '/todos/destroy_all', to: 'todos#destroy_all'
       # resources :todos, only: %i[index show create update destroy]
     end
@@ -33,9 +35,9 @@ Rails.application.routes.draw do
   # get 'todos/new', to: 'site#index'
   # get 'todos/:id/edit', to: 'site#index'
 
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "graphql#execute"
-  end
-  post "/graphql", to: "graphql#execute"
+  # if Rails.env.development?
+  #   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "graphql#execute"
+  # end
+  # post "/graphql", to: "graphql#execute"
   
 end
